@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "current"
+      }
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-object-rest-spread",
+<%_ if (filters.loadable) { _%>
+    "@babel/plugin-syntax-dynamic-import",
+    "react-loadable/babel"
+<%_ } _%>
+  ]
+}

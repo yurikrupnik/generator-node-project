@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "indent": [2, 4],
+    "comma-dangle": 0,
+    "no-underscore-dangle": 1
+  },
+  // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb/rules/react.js
+  "extends": ["airbnb"]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:client & npm run start:server",
+    "start:client": "webpack-dev-server --config webpack.config.client.js",
+    "start:server": "webpack -w --config webpack.config.server.js",
+    "start:mongo": "docker run --rm -d -p 27017:27017 --name mongo mongo",
+    "clean": "rimraf dist/",
+    "build": "npm run clean && npm run build:server & npm run build:client",
+    "build:server": "webpack --env.prod --config webpack.config.server.js",
+    "build:client": "webpack --env.prod --config webpack.config.client.js",
+    "lint": "eslint --ext js,jsx src",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "deploy:test": "npm run lint && npm run test",
+    "deploy:build": "npm run deploy:test && npm run build && docker build -t <%= name %> . ",
+    "deploy:run": "docker run -p 7000:7000 <%= name %>",
+    "deploy:compose": "npm run deploy:test && npm run build && docker-compose up",
+    "deploy:up": "docker run -p 7000:7000 <%= name %>",
+    "debug:server": "webpack --config webpack.config.server.js -w",
+    "debug:client": "webpack --config webpack.config.client.js -w",
+    "debug": "npm run debug:server",
+    "dist": "npm run build && cd dist && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "setupFiles": [
+      "./jestsetup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    }
+  }
+}

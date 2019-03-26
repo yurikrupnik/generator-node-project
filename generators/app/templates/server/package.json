@@ -1,0 +1,26 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack -w",
+    "clean": "rimraf dist/",
+    "build": "npm run clean &&  npm run build:server",
+    "build:server": "webpack --env.prod",
+    "lint": "eslint --ext js,jsx src",
+    "test": "jest src/",
+    "test:watch": "jest src/ --watch",
+    "test:coverage": "jest src/ --coverage",
+    "test:e2e": "jest e2e/"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "setupFiles": [
+      "./jestsetup.js"
+    ]
+  }
+}
