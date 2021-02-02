@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/yurikrupnik/generator-node-project.svg?branch=master)](https://travis-ci.org/yurikrupnik/generator-node-project)
+[![Build Status](https://travis-ci.org/yurikrupnik/generator-node-project.svg?branch=master)](https://travis-ci.org/yurikrupnik/generator-node-project) [![Greenkeeper badge](https://badges.greenkeeper.io/yurikrupnik/generator-node-project.svg)](https://greenkeeper.io/)
