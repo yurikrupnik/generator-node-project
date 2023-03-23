@@ -69,7 +69,7 @@
     "webpack-cli": "^3.3.0",
     "webpack-node-externals": "^1.7.2",
     "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^1.9.1"
+    "yeoman-test": "^7.0.0"
   },
   "jest": {
     "testPathIgnorePatterns": [
